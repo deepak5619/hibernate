@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    <hibernate-configuration>
+      <session-factory>
+<!--           connection properties -->
+          <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+          <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+          <property name="hibernate.connection.username">scott</property>
+          <property name="hibernate.connection.password">tiger</property>
+      
+<!--       hibernate properties -->
+               <property name="hibernate.show_sql">true</property>
+<!--                hibernate is optional in "hibernate.show_sql" -->
+               <property name="format_sql">true</property>
+<!--                <property name="hibernate.transaction.factory_class">jta</property> -->
+<!--                <property name="hibernate.transaction.jta.platform">org.hibernate.service.jta.platform.internal.SunOneJtaPlatform</property> -->
+<!--                  <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</property> -->
+                 <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>            
+
+<!--       mapping tag -->
+       <mapping resource="com/nt/entity/Product.hbm.xml"/>
+      </session-factory>
+    </hibernate-configuration>  
